@@ -92,18 +92,16 @@ end
 # Overwrite Base.error to play the error sound before throwing
 
 @eval begin
-    @eval begin
-        # For a single string argument.
-        function error(s::AbstractString)
-            ClevErr.play_error()
-            throw(ErrorException(s))
-        end
+    # For a single string argument.
+    function error(s::AbstractString)
+        ClevErr.play_error()
+        throw(ErrorException(s))
+    end
 
-        # For varargs (like error(msg...))
-        function error(s::Vararg{Any,N}) where {N}
-            ClevErr.play_error()
-            throw(ErrorException(Main.Base.string(s...)))
-        end
+    # For varargs (like error(msg...))
+    function error(s::Vararg{Any,N}) where {N}
+        ClevErr.play_error()
+        throw(ErrorException(Main.Base.string(s...)))
     end
 end
 

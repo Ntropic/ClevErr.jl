@@ -19,5 +19,8 @@ Audio output does not block code execution.
 
 You can change the volume via a call to `set_volume(value)` (using values between 0 and 1). The volume is stored persistently as a default for your `CevErr` installation.
 
+## Future Goal
+Putting **Clever** into **Error**. I am working on an *ollama* integration, to analyze error messages, summarize important findings and suggest fixes. 
+
 ## Authors
 - [Michael Schilling](https://github.com/Ntropic)
